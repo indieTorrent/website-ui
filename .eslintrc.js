@@ -27,6 +27,15 @@ module.exports = {
     // always use semicolons to terminate lines
     "semi": [2, "always"],
 
+    // disable no shadow
+    "no-shadow": 0,
+
+    // allow global require
+    "global-require": 0,
+
+    // allow unnamed functions
+    "func-names": 0,
+
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
