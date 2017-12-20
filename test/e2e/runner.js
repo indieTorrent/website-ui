@@ -9,13 +9,13 @@ const devConfigPromise = require('../../build/webpack.dev.conf');
 
 let server;
 
-devConfigPromise.then(devConfig => {
+devConfigPromise.then((devConfig) => {
   const devServerOptions = devConfig.devServer;
   const compiler = webpack(webpackConfig);
   server = new DevServer(compiler, devServerOptions);
   const port = devServerOptions.port;
   const host = devServerOptions.host;
-  return server.listen(port, host)
+  return server.listen(port, host);
 })
 .then(() => {
   // 2. run the nightwatch test suite against it
@@ -27,22 +27,22 @@ devConfigPromise.then(devConfig => {
   // http://nightwatchjs.org/guide#settings-file
   let opts = process.argv.slice(2);
   if (opts.indexOf('--config') === -1) {
-    opts = opts.concat(['--config', 'test/e2e/nightwatch.conf.js'])
+    opts = opts.concat(['--config', 'test/e2e/nightwatch.conf.js']);
   }
   if (opts.indexOf('--env') === -1) {
-    opts = opts.concat(['--env', 'chrome'])
+    opts = opts.concat(['--env', 'chrome']);
   }
 
   const spawn = require('cross-spawn');
   const runner = spawn('./node_modules/.bin/nightwatch', opts, { stdio: 'inherit' });
 
-  runner.on('exit', function (code) {
+  runner.on('exit', (code) => {
     server.close();
-    process.exit(code)
+    process.exit(code);
   });
 
-  runner.on('error', function (err) {
+  runner.on('error', (err) => {
     server.close();
-    throw err
-  })
+    throw err;
+  });
 });
