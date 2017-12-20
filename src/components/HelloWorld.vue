@@ -10,7 +10,7 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Welcome to indieTorrent, LLC',
+      msg: 'Welcome to indieTorrent.org, LLC',
     };
   },
 };
