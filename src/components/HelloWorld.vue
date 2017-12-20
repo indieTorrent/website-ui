@@ -1,5 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="hello text-center">
+    <img src="../assets/images/indietorrent-logo.png" alt="indieTorrent.org Logo">
     <h1>{{ msg }}</h1>
   </div>
 </template>
