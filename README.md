@@ -1,5 +1,7 @@
 # Website UI
 
+[![Build Status](https://travis-ci.org/indieTorrent/website-ui.svg?branch=master)](https://travis-ci.org/indieTorrent/website-ui)
+
 > The next-generation incarnation of https://indietorrent.org
 
 ## Build Setup
