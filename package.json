@@ -12,6 +12,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test config build",
     "build": "node build/build.js",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "npm run lint && npm run unit"
   },
   "dependencies": {
@@ -19,6 +20,8 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^5.2.5",
+    "@commitlint/config-conventional": "^5.2.3",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
